@@ -1,0 +1,17 @@
+<?php
+$newscollection = $block->getNews();
+if ($newscollection) {
+    foreach ($newscollection as $value) {
+        ?>
+        <h2><?php echo __($value->getTitle()); ?></h2>
+        <?php if ($value->getImages()) { ?>
+            <?php $image = $block->getMediaUrl() . $value->getImages() ?>
+            <img src="<?php echo $image ?>" alt="<?php echo __($value->getTitle()); ?>"/>
+        <?php } ?>
+        <p><?php echo $value->getDescription() ?></p>
+    <?php
+    }
+} else {
+    ?>
+    <p> <?php echo __("there is no news now") ?> </p>
+<?php } ?>
