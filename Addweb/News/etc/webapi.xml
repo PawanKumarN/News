@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../app/code/Magento/Webapi/etc/webapi.xsd">
+
+<route  url="/V1/custom/getNewslist/" method="GET">
+        <service class="Addweb\News\Api\NewsapiInterface" method="getNewslist"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+<route  url="/V1/custom/getNews/:id" method="GET">
+        <service class="Addweb\News\Api\NewsapiInterface" method="getNews"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+</routes>
